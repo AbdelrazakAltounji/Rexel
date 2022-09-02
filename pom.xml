@@ -3,7 +3,7 @@
   <groupId>Rexel</groupId>
   <artifactId>Rexel</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <name>rexel_Testing</name>
+  <name>Rexel_Testing</name>
 <packaging>jar</packaging>
 
     <properties>
