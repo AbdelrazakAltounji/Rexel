@@ -85,7 +85,7 @@ private HermesMethods RexelMethods;
 	@Given("Je navigue sur le site Rexel boutique") 
 	public void naviguation_site_Rexel() {
 		RexelMethods = new HermesMethods();
-		#WebDriver driver = RexelMethods.Naviguation_Site_Rexel();
+		//WebDriver driver = RexelMethods.Naviguation_Site_Rexel();
 		driver.get("https://www.rexel.fr/frx/?gclid=EAIaIQobChMI1oOx97jL-QIVyRoGAB1l5AaJEAAYASAAEgKV5PD_BwE");
 		RexelMethods.setDriver(driver);
 		driver1 = RexelMethods.getDriver();
