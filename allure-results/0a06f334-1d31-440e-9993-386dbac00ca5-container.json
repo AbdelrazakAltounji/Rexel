@@ -1,0 +1,1 @@
+{"uuid":"0a06f334-1d31-440e-9993-386dbac00ca5","name":"Example: test","children":["2632473f-b504-4ff4-9580-befd1ff0d496"],"befores":[{"name":"stepDef.StepDefinitions.SecondSD()","status":"passed","stage":"finished","steps":[],"attachments":[],"parameters":[],"start":1660742842356,"stop":1660742845457}],"afters":[],"start":1660742842356,"stop":1660742856824}
