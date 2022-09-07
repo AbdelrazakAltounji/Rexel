@@ -50,21 +50,45 @@ import org.openqa.selenium.support.events.EventFiringDecorator;
 
 public class Rexel_test {
 	
-private HermesMethods hermesMethods;
+private HermesMethods RexelMethods;
 	
 	WebDriver driver;
 	WebDriver driver1;
 	
-	
+	@Before
+	public void SecondSD() throws MalformedURLException {
+		String string = "chrome";	
+		
+			if(string =="firefox")
+			{
+			 FirefoxOptions firefoxOptions = new FirefoxOptions();
+			 firefoxOptions.setCapability("browserName","firefox");
+			 firefoxOptions.setCapability("platform", Platform.ANY);
+			 driver = new RemoteWebDriver(new URL("https://selenium.wap-test-platform-iks-086d0feb796ce72f6b820703a879a158-0000.eu-de.containers.appdomain.cloud"),firefoxOptions);
+			}
+		else if (string =="chrome")
+			{
+				ChromeOptions chromeOptions = new ChromeOptions();
+				chromeOptions.setCapability("browserName","chrome");
+				chromeOptions.setCapability("platform", Platform.ANY);
+				driver = new RemoteWebDriver(new URL("https://selenium.wap-test-platform-iks-086d0feb796ce72f6b820703a879a158-0000.eu-de.containers.appdomain.cloud"), chromeOptions);	
+			}
+		else if (string =="local")
+		{
+			System.setProperty("webdriver.chrome.driver","C:\\Abdelrazak\\chromedriver.exe");
+			driver = new ChromeDriver();
+		}
+	}
 	
 	
 	
 	@Given("Je navigue sur le site Rexel boutique") 
 	public void naviguation_site_Rexel() {
-		hermesMethods = new HermesMethods();
-		WebDriver driver = hermesMethods.Naviguation_Site_Rexel();
-		hermesMethods.setDriver(driver);
-		driver1 = hermesMethods.getDriver();
+		RexelMethods = new HermesMethods();
+		//WebDriver driver = RexelMethods.Naviguation_Site_Rexel();
+		driver.get("https://www.rexel.fr/frx/?gclid=EAIaIQobChMI1oOx97jL-QIVyRoGAB1l5AaJEAAYASAAEgKV5PD_BwE");
+		RexelMethods.setDriver(driver);
+		driver1 = RexelMethods.getDriver();
 		driver1.manage().window().maximize();
 		
 	}
@@ -83,7 +107,7 @@ private HermesMethods hermesMethods;
 		//WebElement produit = driver1.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[1]/div[1]/ul/li[3]/a"));
 		//produit.click();
 		
-		WebElement event = eventHandler.findElement(By.partialLinkText("Sélection produits"));
+		WebElement event = eventHandler.findElement(By.partialLinkText("SÃ©lection produits"));
 		JavascriptExecutor executor = (JavascriptExecutor)driver1;
 		executor.executeScript("arguments[0].click();",event);
 		
@@ -91,12 +115,12 @@ private HermesMethods hermesMethods;
 	
 	@And("choisir Chauffage electrique climatisation ventilation")
 	public void appuyer_produit() {
-		//WebElement produit = driver1.findElement(By.linkText("Chauffage électrique climatisation ventilation"));
+		//WebElement produit = driver1.findElement(By.linkText("Chauffage Ã©lectrique climatisation ventilation"));
 		//JavascriptExecutor executor1 = (JavascriptExecutor)driver1;
 		//executor1.executeScript("arguments[0].click();",produit);
 		for(int i=0; i<=2;i++){
 			  try{
-			     driver1.findElement(By.linkText("Chauffage électrique climatisation ventilation")).click();
+			     driver1.findElement(By.linkText("Chauffage Ã©lectrique climatisation ventilation")).click();
 			     break;
 			  }
 			  catch(Exception e){
@@ -105,7 +129,7 @@ private HermesMethods hermesMethods;
 			}
 		
 		//WebDriverWait wait = new WebDriverWait(driver1,Duration.ofSeconds(10));
-		//wait.until(ExpectedConditions.presenceOfElementLocated(By.linkText("Chauffage électrique climatisation ventilation")));
+		//wait.until(ExpectedConditions.presenceOfElementLocated(By.linkText("Chauffage Ã©lectrique climatisation ventilation")));
 		//wait.until(ExpectedConditions.refreshed(ExpectedConditions.stalenessOf(produit)));
 		
 	}
