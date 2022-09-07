@@ -1,6 +1,6 @@
 Feature: Test réaliser sur site Rexel boutique
 
-	#Test avec Gitlab CI/CD
+	
 	@TEST_PT-43
 	Scenario: Test réaliser sur site Rexel boutique
 		Feature: Naviguer sur site Rexel
