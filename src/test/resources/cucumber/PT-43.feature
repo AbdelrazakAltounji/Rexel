@@ -1,5 +1,5 @@
 	@TEST_PT-43
-	
+	#Feature: Naviguer sur site Rexel
 		
 					Scenario: Rexel test
 						Feature: Rexel test naviguation sur site	
