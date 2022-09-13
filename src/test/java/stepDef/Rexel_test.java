@@ -58,7 +58,7 @@ private HermesMethods RexelMethods;
 	
 	@Before
 	public void SecondSD() throws MalformedURLException {
-		String string = "edge";	
+		String string = "chrome";	
 		
 			if(string =="firefox")
 			{
