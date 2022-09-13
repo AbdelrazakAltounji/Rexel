@@ -57,7 +57,7 @@ private HermesMethods RexelMethods;
 	
 	@Before
 	public void SecondSD() throws MalformedURLException {
-		String string = "chrome";	
+		String string = "edge";	
 		
 			if(string =="firefox")
 			{
@@ -73,6 +73,14 @@ private HermesMethods RexelMethods;
 				chromeOptions.setCapability("platform", Platform.ANY);
 				driver = new RemoteWebDriver(new URL("https://selenium.wap-test-platform-iks-086d0feb796ce72f6b820703a879a158-0000.eu-de.containers.appdomain.cloud"), chromeOptions);	
 			}
+		else if (string == "edge")
+		{
+			EdgeOptions edgeoptions = new EdgeOptions();
+			edgeoptions.setCapability("browserName","edge");
+			edgeoptions.setCapability("platform", Platform.ANY);
+			driver = new RemoteWebDriver(new URL("https://selenium.wap-test-platform-iks-086d0feb796ce72f6b820703a879a158-0000.eu-de.containers.appdomain.cloud"), edgeoptions);
+			
+		}
 		else if (string =="local")
 		{
 			System.setProperty("webdriver.chrome.driver","C:\\Abdelrazak\\chromedriver.exe");
